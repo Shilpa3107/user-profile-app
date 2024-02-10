@@ -15,17 +15,15 @@ const UserProfile = () => {
 
   return (
     <div style={{ 
-      backgroundColor: '#f8f8f8',
-      padding: '2rem',
-      borderRadius: '0.5rem',
-      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh'
     }}>
       {user ? (
         <div style={{ 
-          backgroundColor: 'white',
-          padding: '2rem',
-          borderRadius: '0.5rem',
-          textAlign: 'center'
+          display: 'flex',
+          alignItems: 'center'
         }}>
           <img
             src={user.picture.large}
@@ -35,33 +33,34 @@ const UserProfile = () => {
               height: '10rem',
               borderRadius: '50%',
               objectFit: 'cover',
-              marginBottom: '1rem'
+              marginRight: '1rem'
             }}
           />
-          <h2 style={{ 
-            fontSize: '2.5rem',
-            marginBottom: '0.5rem'
-          }}>
-            {user.name.first} {user.name.last}
-          </h2>
-          <p style={{ 
-            fontSize: '1.2rem',
-            color: '#666',
-            marginBottom: '1rem'
-          }}>
-            {user.email}
-          </p>
-          <div style={{ 
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: '1rem'
-          }}>
-            <strong style={{ 
-              fontWeight: 'bold',
-              marginRight: '0.5rem'
-            }}>Phone Number</strong>
-            <p>{user.phone}</p>
+          <div>
+            <h2 style={{ 
+              fontSize: '2.5rem',
+              marginBottom: '0.5rem'
+            }}>
+              {user.name.first} {user.name.last}
+            </h2>
+            <p style={{ 
+              fontSize: '1.2rem',
+              color: '#666',
+              marginBottom: '1rem'
+            }}>
+              {user.email}
+            </p>
+            <div style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '1rem'
+            }}>
+              <strong style={{ 
+                fontWeight: 'bold',
+                marginRight: '0.5rem'
+              }}>Phone Number:</strong>
+              <p>{user.phone}</p>
+            </div>
           </div>
         </div>
       ) : (
